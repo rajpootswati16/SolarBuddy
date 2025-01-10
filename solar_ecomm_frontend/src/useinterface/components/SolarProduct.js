@@ -3,13 +3,15 @@ import { serverURL } from '../../services/FetchNodeServices';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
 import PlusMinusComponent from './PlusMinusComponent';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 export default function SolarProduct(props) {
   const dispatch = useDispatch();
+  var products=useSelector(state=>state.cart)
+  var productFromRedux=Object.values(products)
   var navigate = useNavigate();
 
   const productdetail = props.data;
@@ -44,10 +46,10 @@ export default function SolarProduct(props) {
         }}
       >
         <div style={{ position: 'relative', width: '100%' }}>
-          <p style={{ width: "60px", height: "25px", background: "#f1c40f", clipPath: "polygon(100% 0, 90% 48%, 100% 100%, 0% 100%, 0 51%, 0% 0%)", fontWeight: 'bolder', fontSize: ".8vw", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <p style={{ width: "60px", height: "25px", background: "#f1c40f", clipPath: "polygon(100% 0%, 90% 48%, 100% 100%, 0% 100%, 0% 51%, 0% 0%)", fontWeight: 'bolder', fontSize: "0.8vw", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {(((item.price - item.offerprice) / item.price) * 100).toFixed(1)}%
           </p>
-          <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} style={{ position: 'absolute', top: 0, right: 0 }} />
+          <Checkbox  {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} style={{ position: 'absolute', top: 0, right: 0 }} />
         </div>
         <div onClick={() => handleNextPage(item)} style={{cursor: 'pointer' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '4%' }}>

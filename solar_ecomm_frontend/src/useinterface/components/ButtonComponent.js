@@ -3,9 +3,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Fab } from "@mui/material";
 
 
-
-
-export default function PlusMinusComponent(props){
+export default function ButtonComponent(props){
     const [value,setValue]=useState(0)
 
     const handlePlus=()=>{

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 import ProductDetailsMultiImages from '../components/ProductDetailsMultiImages'
 import ProductDetailsHeader from '../components/ProductDetailsHeader'
 import ProductDetailsDescription from '../components/ProductDetailsDescription'
